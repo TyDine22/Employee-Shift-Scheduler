@@ -127,6 +127,8 @@ public class Main {
             }
         }
 
+        System.out.println("Employee registered successfully!");
+        System.out.println();
         return new Employee(name, position, prefer, legalWorkHour);
     }
 
@@ -154,6 +156,7 @@ public class Main {
         System.out.println("    " + PartTimePosition.Cleaner.class.getSimpleName());
         System.out.println("    " + PartTimePosition.Cashier.class.getSimpleName());
         System.out.println("    " + PartTimePosition.StockController.class.getSimpleName());
+        System.out.println();
     }
 
     private static String getShiftStartHour(Employee employee) {
@@ -223,10 +226,10 @@ public class Main {
             if (employee.getName().equalsIgnoreCase(name)) {
                 employees.remove(i);
                 System.out.println("Shift for employee " + name + " deleted.");
+                System.out.println();
                 return;
             }
         }
-
         System.out.println("Employee with name " + name + " not found. No shift deleted.");
     }
 
