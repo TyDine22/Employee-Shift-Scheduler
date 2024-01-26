@@ -47,8 +47,9 @@ public class Main {
                     }
                     break;
                 case 5:
+                    input.nextLine();
                     System.out.print("Input name to delete: ");
-                    String deleteName = input.next();
+                    String deleteName = input.nextLine();
                     deleteEmployeeShift(employees, deleteName);
                     break;
                 case 6:
@@ -180,15 +181,14 @@ public class Main {
     //3. Function to show all registered employees
     private static void displayAllEmployeeShifts(List<Employee> employees) {
         System.out.println("All Employee Shift Information: ");
-        System.out.printf("%-20s%-25s%-15s%-15s%-15s%-15s%n", "Name", "Position", "Shift", "Start Hour", "End Hour", "Legal Work Hour");
+        System.out.printf("%-20s%-25s%-15s%-15s%-15s%n", "Name", "Position", "Shift", "Start Hour", "End Hour");
 
         for (Employee employee : employees) {
-            System.out.printf("%-20s%-25s%-15s%-15s%-15s%-15s%n", employee.getName(),
+            System.out.printf("%-20s%-25s%-15s%-15s%-15s%n", employee.getName(),
                                                                   employee.getPosition(),
                                                                   employee.getPrefer(),
                                                                   getShiftStartHour(employee),
-                                                                  getShiftEndHour(employee),
-                                                                  employee.getLegalWorkHour());
+                                                                  getShiftEndHour(employee));
         }
         System.out.println();
     }
@@ -205,13 +205,14 @@ public class Main {
 
     private static void displayEmployeeShift(Employee employee) {
         System.out.println("Employee Shift Information: ");
-        System.out.printf("%-20s%-25s%-15s%-15s%-15s%n", "Name", "Position", "Shift", "Start Hour", "End Hour");
-        System.out.printf("%-20s%-25s%-15s%-15s%-15s%n",
+        System.out.printf("%-20s%-25s%-15s%-15s%-15s%-15s%n", "Name", "Position", "Shift", "Start Hour", "End Hour", "Legal Work Hour");
+        System.out.printf("%-20s%-25s%-15s%-15s%-15s%-15s%n",
                 employee.getName(),
                 employee.getPosition(),
                 employee.getPrefer(),
                 getShiftStartHour(employee),
-                getShiftEndHour(employee));
+                getShiftEndHour(employee),
+                employee.getLegalWorkHour());
         System.out.println();
     }
 
