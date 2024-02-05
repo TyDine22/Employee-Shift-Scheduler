@@ -11,8 +11,8 @@ public class Main {
         employees.add(new Employee("Narith", "Cleaner", "Afternoon", 30));
         do{
             System.out.println("Mart Employee Shift Schedule");
-            System.out.println("1. Register Employee Shift");
-            System.out.println("2. Show Position and Time preferences");
+            System.out.println("1. Show Position and Time preferences");
+            System.out.println("2. Register Employee Shift");
             System.out.println("3. Employees Shift");
             System.out.println("4. Search Employee Shift by name");
             System.out.println("5. Delete Existing Shift");
@@ -21,10 +21,10 @@ public class Main {
             choice = input.nextInt();
             switch (choice) {
                 case 1:
-                    employees.add(createEmployee(input));
+                    showTimeAndPosition();
                     break;
                 case 2:
-                    showTimeAndPosition();
+                    employees.add(createEmployee(input));
                     break;
                 case 3:
                     if (employees.isEmpty()) {
